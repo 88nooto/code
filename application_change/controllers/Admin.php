@@ -361,13 +361,58 @@ class Admin extends CI_Controller
 	
 	private function get_admin_keycode_data()
 	{
-		$data['tr_class'] = array("","success","warning","info");//列表样式
-		$data['keycode_data'] = $this -> admin_models -> get_keycode_data();
-		$this->load->view('templates/keycode_page.php',$data);
+		
+		$this->load->view('templates/keycode_screen.php');
+		
+		//$this->screen_admin_keycode_data();
+	
 	}
 
 
-
+	public function screen_admin_keycode_data()
+	{
+	try
+	{
+		
+		if(!$this->login_test('ajax'))
+			{
+				throw new Exception('error, please try again.');
+			}else if($this->power_test()!=1)
+			{
+				throw new Exception('error, please try again.');
+			}
+		
+		
+		$active = $this->input->post('active');
+		
+		if(!isset($active))
+		{
+			$active = "1";
+		}
+		
+		switch($active)
+		{
+			case "not":
+		$data['tr_class'] = array("","success","warning","info");//列表样式
+		$data['keycode_data'] = $this -> admin_models -> get_keycode_data_not();
+		$this->load->view('templates/keycode_page.php',$data);
+				break;
+			case "yes":
+		$data['tr_class'] = array("","success","warning","info");//列表样式
+		$data['keycode_data'] = $this -> admin_models -> get_keycode_data_yes();
+		$this->load->view('templates/keycode_page.php',$data);
+				break;
+			default:
+		$data['tr_class'] = array("","success","warning","info");//列表样式
+		$data['keycode_data'] = $this -> admin_models -> get_keycode_data();
+		$this->load->view('templates/keycode_page.php',$data);
+			break;
+		}
+		
+	}catch(Exception $e){
+		echo $e -> getMessage();
+	}
+	}
 
 
 
