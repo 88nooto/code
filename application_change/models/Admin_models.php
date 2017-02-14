@@ -92,11 +92,33 @@ class Admin_models extends CI_Model {
 		$str = $this->db->update('admin_data', $data, $where);
 	}
 	
-	public function get_keycode_data()
+	public function get_keycode_data()//读取全部邀请码
 	{
 		$this->db->select('*');
 		$this->db->from('keycode_data');
 		//$this->db->where($where); // Produces: WHERE name = 'Joe' 
+		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$result = $query->result_array();
+		return $result;
+	}
+	
+	public function get_keycode_data_not()//读取未使用邀请码
+	{
+		$where = "state_code = '0'";
+		$this->db->select('*');
+		$this->db->from('keycode_data');
+		$this->db->where($where); // Produces: WHERE name = 'Joe' 
+		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$result = $query->result_array();
+		return $result;
+	}
+	
+	public function get_keycode_data_yes()//读取已使用邀请码
+	{
+		$where = "state_code = '1'";
+		$this->db->select('*');
+		$this->db->from('keycode_data');
+		$this->db->where($where); // Produces: WHERE name = 'Joe' 
 		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
 		$result = $query->result_array();
 		return $result;
