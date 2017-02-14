@@ -1,40 +1,3 @@
-<div id="addcode" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-md">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-				×
-				</button>
-				<h4 class="modal-title" id="myModalLabel"> add keycode </h4>
-			</div>
-			<div class="modal-body" >
-				<div id="show">
-					请点击添加按钮，以新增邀请码。
-				</br>
-				</div>
-			</div>
-			</form>
-		
-		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">
-			关闭
-			</button>
-			<button id="add" type="button" class="btn btn-success">
-			添加
-			</button>
-		</div>
-		</div>
-		</form>
-	</div>
-</div>
-</div>
-<div style="position: absolute;width: 100%;">
-	<div style="float: right;position: relative;top:-30px;left: -30px;">
-		<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addcode">
-		添加邀请码
-		</button>
-	</div>
-</div>
 <table class="table table-hover table-condensed">
 	<thead>
 		<tr>
@@ -83,30 +46,10 @@
 		<?php endforeach; ?>
 	</tbody>
 </table>
-<script type="text/javascript">
-$('#add').click(function() {
 
-	$.ajax({
-		type: "post",
-		url: "/admin/add_keycode",
-		//async: false ,
-		//dataType: "json",
-		success: function(result) 
-		{
-				//$("#r_div").load('/admin/revise_admin_user_data');
-				$("#show").text(result);
-			//alert(result+" / ok");
-		},
-		error: function (result) 
-		{
-			alert(this+" / no");
-		}
-//		complete: function (XMLHttpRequest, textStatus) 
-//		{
-//  	alert(this); // 调用本次AJAX请求时传递的options参数
-//		}
-	});
-});
+<script type="text/javascript">
+
+
 
 $('.remove_code').click(function() {
 	var children = $(this).parent().parent().children();
