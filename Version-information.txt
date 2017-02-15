@@ -13,3 +13,7 @@ Master vsrsion 0.11.1
 Master vsrsion 0.11.2
 修复了标题和logo因路径不正确而产生的404 bug。
 更改了标题。
+
+Master vsrsion 0.11.3
+删除了部分导航连接中的.php后缀，以避开在nginx下，.php后缀连接会无视ci中的url引擎，造成了部分页面404问题。
+
