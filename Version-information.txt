@@ -5,3 +5,7 @@ php 7.0.4
 Master vsrsion 0.11
 新增了key的不同状态查询。
 新增了版本信息。
+
+Master vsrsion 0.11.1
+修正了一些加载静态资源时的路径，原先依据$config['base_url']即网站域名，变为了依据网站根目录。
+开启了novel和search模块的未完成提示。
