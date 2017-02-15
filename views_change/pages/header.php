@@ -34,8 +34,8 @@
 			<div id="h01" class="header"style="background:url(assets/images/header_bg/<?php echo $header_data['header_img']; ?>) no-repeat center top transparent;">
 				<div id="logo">
 					<!-- logo -->
-					<a href="index.html" style="color:#0F0">
-						<img src="assets/images/logo/<?php echo $header_data['logo_img']; ?>" />
+					<a href="index.php" style="color:#0F0">
+						<img src="/assets/images/logo/<?php echo $header_data['logo_img']; ?>" />
 					</a>
 				</div>
 				<!-- end .header -->
