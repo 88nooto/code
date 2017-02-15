@@ -12,3 +12,4 @@ Master vsrsion 0.11.1
 
 Master vsrsion 0.11.2
 修复了标题和logo因路径不正确而产生的404 bug。
+更改了标题。

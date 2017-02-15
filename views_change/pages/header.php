@@ -11,7 +11,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>
-			Colorlili + Co + 2Fe → ?
+			Co + 2Fe → ?
 		</title>
 
 

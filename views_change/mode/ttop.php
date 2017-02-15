@@ -2,7 +2,7 @@
 <div id="ttop">
 	<div id="ttop-homelink">
 		<a href="/assets/images/logo/Coffeelogo01.png" class="navigation-link" target="_blank">
-			if ( Co + 2Fe → Coffee ), So ~ Colorlili + Co + 2Fe → ?
+			So ~ Co + 2Fe → ?
 		</a>
 	</div>
 	<div id="uesr">
