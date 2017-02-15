@@ -1,5 +1,6 @@
-apache性能需调试，采集任务依然会造成假死。
+功能模块施工中。
 <?php
+//apache性能需调试，采集任务依然会造成假死。
 //set_time_limit(0); 
 //
 //function html2text($str){

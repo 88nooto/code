@@ -64,8 +64,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Pages';  //修改默认加载的控制器，为controllers/Pages.php下的view方法    
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-//$route['novel'] = 'Novel/novel';
-$route['test'] = 'Pages/view';
+$route['novel'] = 'Novel/novel';
+//$route['test'] = 'Pages/view';
 $route['anime.php'] = 'Pages/view/demo02';
 $route['image.php'] = 'Pages/view/demo03';
 $route['music.php'] = 'Pages/view/demo04';
