@@ -36,7 +36,7 @@
 	</div>
 	<div class="nav-right">
 				<div class="search-bar">
-					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="text" value="Search模块施工中" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 					<input type="submit" value="">
 				</div>
 				<ul>

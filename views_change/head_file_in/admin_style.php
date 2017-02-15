@@ -1,6 +1,6 @@
 <head>
     <!-- Bootstrap -->
-    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"> 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
