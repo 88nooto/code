@@ -17,3 +17,6 @@ Master vsrsion 0.11.2
 Master vsrsion 0.11.3
 删除了部分导航连接中的.php后缀，以避开在nginx下，.php后缀连接会无视ci中的url引擎，造成了部分页面404问题。
 
+Master vsrsion 0.11.4
+修复了改密码无效的bug。
+临时赋予了普通管理员邀请码管理权限。

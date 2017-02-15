@@ -89,7 +89,7 @@ $('button.keycode-status').click(function() {
 		{
 				//$("#r_div").load('/admin/revise_admin_user_data');
 				//$("#show").text(result);
-			alert(name+" / ok");
+			//alert(name+" / ok");
 			$("#datalist").html(result);
 			//console.log(children.eq(0).text());
 		},

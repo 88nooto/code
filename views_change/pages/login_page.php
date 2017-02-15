@@ -10,6 +10,11 @@
 			
 	</head>
 	<body>
+		<!--
+	嘘，或许可以尝试访问/admin
+	user：temp
+	pw：123456
+-->
 		<?php //echo $errors; ?>
 		<div class="ll">
 			<div class="ll-box">

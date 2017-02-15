@@ -183,8 +183,8 @@ class Admin extends CI_Controller
 		}
 		} catch(Exception $e) {
 		$data['message'] = $e -> getMessage();
-		//$this -> load -> view('pages/login_page', $data);
-		//session_destroy();
+		$this -> load -> view('pages/login_page', $data);
+		session_destroy();
 		}
 	}
 	
@@ -319,10 +319,13 @@ class Admin extends CI_Controller
 				$this -> get_admin_menu_data();
 			continue;
 			case "web":
-				$this -> get_admin_web_data();
+				$this -> get_admin_web_data(); 
+			continue;
+			case "code"://暂时将code权限赋予普通管理员
+				$this -> get_admin_keycode_data();
 			continue;
 			default:
-			echo "can't getting data.";
+			echo "can't getting data.3";
 			};
 			break;
 			default:
@@ -377,9 +380,9 @@ class Admin extends CI_Controller
 		if(!$this->login_test('ajax'))
 			{
 				throw new Exception('error, please try again.');
-			}else if($this->power_test()!=1)
+			}else if($this->power_test()!=(1||3))
 			{
-				throw new Exception('error, please try again.');
+				throw new Exception('error, please try again.1');
 			}
 		
 		
@@ -542,9 +545,11 @@ class Admin extends CI_Controller
 				echo "Revise Complete.0";
 			}else if($pw=$pw2){
 				$a_uid = $uid;
-				$a_un = $user;
+				$a_un = $this->encryption->encrypt($user);
 				$a_pw = $this -> password_hash($pw);
 				$result = $this -> admin_models -> revise_admin_user_data_move($a_uid,$a_un,$a_power,$a_pw);
+				
+				
 				echo "Revise Complete.1";
 			}else{
 				throw new Exception('请输入正确的用户名或密码.rnu');
