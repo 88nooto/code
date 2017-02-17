@@ -8,11 +8,12 @@ class Admin_models extends CI_Model {
 	
 	public function get_admin($admin)
 	{
-		$where = "admin_user = '".$admin."'";
-		$this->db->select('*');
-		$this->db->from('admin_data');
-		$this->db->where($where); // Produces: WHERE name = 'Joe' 
-		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+//		$where = "admin_user = '".$admin."' ORDER BY admin_uid";
+//		$this->db->select('*');
+//		$this->db->from('admin_data');
+//		$this->db->where($where); // Produces: WHERE name = 'Joe' 
+//		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$query =  $this->db->query("SELECT * FROM admin_data WHERE admin_user = '$admin' ORDER BY admin_uid DESC");
 		$result = $query->row();
 		return $result;
 		
@@ -20,11 +21,13 @@ class Admin_models extends CI_Model {
 	
 	public function get_uid_and_admin($uid,$admin)
 	{
-		$where = "admin_uid = '".$uid."' AND admin_user = '".$admin."'";
-		$this->db->select('*');
-		$this->db->from('admin_data');
-		$this->db->where($where); // Produces: WHERE name = 'Joe' 
-		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+//		$where = "admin_uid = '".$uid."' AND admin_user = '".$admin."'";
+//		$this->db->select('*');
+//		$this->db->from('admin_data');
+//		$this->db->where($where); // Produces: WHERE name = 'Joe' 
+//		$this->db->order_by('admin_uid ASC');
+//		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$query =  $this->db->query("SELECT * FROM admin_data WHERE admin_uid = '$uid' AND admin_user = '$admin' ORDER BY admin_uid");
 		$result = $query->row_array();
 		return $result;
 		
@@ -32,11 +35,12 @@ class Admin_models extends CI_Model {
 	
 	public function get_admin_data()
 	{
-		//$where = "admin_user = '".$admin."'";
-		$this->db->select('*');
-		$this->db->from('admin_data');
-		//$this->db->where($where); // Produces: WHERE name = 'Joe' 
-		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+//		//$where = "admin_user = '".$admin."'";
+//		$this->db->select('*');
+//		$this->db->from('admin_data');
+//		//$this->db->where($where); // Produces: WHERE name = 'Joe' 
+//		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$query =  $this->db->query("SELECT * FROM admin_data ORDER BY admin_uid ASC");
 		$result = $query->result_array();
 		return $result;
 		
@@ -94,32 +98,35 @@ class Admin_models extends CI_Model {
 	
 	public function get_keycode_data()//读取全部邀请码
 	{
-		$this->db->select('*');
-		$this->db->from('keycode_data');
-		//$this->db->where($where); // Produces: WHERE name = 'Joe' 
-		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+//		$this->db->select('*');
+//		$this->db->from('keycode_data');
+//		//$this->db->where($where); // Produces: WHERE name = 'Joe' 
+//		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$query =  $this->db->query("SELECT * FROM keycode_data ORDER BY keydate_use DESC,keydate_create DESC");
 		$result = $query->result_array();
 		return $result;
 	}
 	
 	public function get_keycode_data_not()//读取未使用邀请码
 	{
-		$where = "state_code = '0'";
-		$this->db->select('*');
-		$this->db->from('keycode_data');
-		$this->db->where($where); // Produces: WHERE name = 'Joe' 
-		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+//		$where = "state_code = '0'";
+//		$this->db->select('*');
+//		$this->db->from('keycode_data');
+//		$this->db->where($where); // Produces: WHERE name = 'Joe' 
+//		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$query =  $this->db->query("SELECT * FROM keycode_data WHERE state_code = '0' ORDER BY keydate_create DESC");
 		$result = $query->result_array();
 		return $result;
 	}
 	
 	public function get_keycode_data_yes()//读取已使用邀请码
 	{
-		$where = "state_code = '1'";
-		$this->db->select('*');
-		$this->db->from('keycode_data');
-		$this->db->where($where); // Produces: WHERE name = 'Joe' 
-		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+//		$where = "state_code = '1'";
+//		$this->db->select('*');
+//		$this->db->from('keycode_data');
+//		$this->db->where($where); // Produces: WHERE name = 'Joe' 
+//		$query = $this->db->get();  // Produces: SELECT id, nav_link, nav_name FROM nav
+		$query =  $this->db->query("SELECT * FROM keycode_data WHERE state_code = '1' ORDER BY keydate_use DESC");
 		$result = $query->result_array();
 		return $result;
 	}

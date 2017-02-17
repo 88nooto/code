@@ -116,7 +116,7 @@ class Admin extends CI_Controller
 			} else {
 				$data['message'] = '</br>';
 			}
-		$this->load->view('head_file_in/admin_style');
+		//$this->load->view('head_file_in/admin_style');
 		$this -> load -> view('pages/login_page', $data);
 		} else {
 
@@ -337,6 +337,8 @@ class Admin extends CI_Controller
 	  }catch(Exception $e) {
 		echo $e -> getMessage();
 		session_destroy();
+		$url=base_url().'admin';
+		header('refresh:1;url='.$url);
 	  }
 	}
 
