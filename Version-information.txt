@@ -20,3 +20,8 @@ Master vsrsion 0.11.3
 Master vsrsion 0.11.4
 修复了改密码无效的bug。
 临时赋予了普通管理员邀请码管理权限。
+
+Master vsrsion 0.11.5
+修复了一些bug。
+修复了admin登陆界面因为载入了不需要的css造成的界面显示与预计不符的问题。
+修改了部分sql查询为使用原生sql，使用和修改起来更直观。
