@@ -26,7 +26,7 @@ $username = $this->encryption->decrypt($_SESSION['loginfo']['a_un']);
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body >
     <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
