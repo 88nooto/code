@@ -151,7 +151,7 @@ class Admin_models extends CI_Model {
 			'keydate_create' => date("Y-m-d")
 			);
 		$this -> db -> insert('keycode_data', $data);
-		//return $keycode;
+		return $keycode;
 	}
 	
 	public function remove_keycode($keycode)

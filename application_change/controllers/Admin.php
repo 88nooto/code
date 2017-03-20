@@ -742,7 +742,7 @@ class Admin extends CI_Controller
 		if(empty($result))
 		{
 			$return = $this->admin_models->inset_keycode($bytes);
-			echo $bytes;
+			echo $return;
 		}else{
 			$this->add_keycode();
 		}
