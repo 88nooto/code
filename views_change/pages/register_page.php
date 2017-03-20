@@ -33,7 +33,7 @@
 		</form>
 		</div>
 		-->
-		<div class="form-div">
+		<div class="form-div" style="margin-top:50px;">
 			<form id="reg-form" action="register" method="post">
 
 				<table>
@@ -82,7 +82,9 @@
 				<div class="buttons">
 					
 					<input value="注 册" type="submit" style="margin-right:20px; margin-top:20px;"/>
-					<input value="我有账号，我要登录" type="button" style="margin-right:45px; margin-top:20px;"/>
+					<a href="login">
+					<input  value="我有账号，我要登录" type="button" style="margin-right:45px; margin-top:20px;"/>
+					</a>
 				</div>
 
 				<br class="clear">

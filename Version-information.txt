@@ -1,31 +1,34 @@
 codeigniter 3.1.0
-php 7.0.4
+php 7.0.4/5.6.19
 
+Master vsrsion 0.11.7
+兼容php5.6使用ci内置随机函数替换了random_bytes。
 
-Master vsrsion 0.11
-新增了key的不同状态查询。
-新增了版本信息。
-
-Master vsrsion 0.11.1
-修正了一些加载静态资源时的路径，原先依据$config['base_url']即网站域名，变为了依据网站根目录。
-开启了novel和search模块的未完成提示。
-
-Master vsrsion 0.11.2
-修复了标题和logo因路径不正确而产生的404 bug。
-更改了标题。
-
-Master vsrsion 0.11.3
-删除了部分导航连接中的.php后缀，以避开在nginx下，.php后缀连接会无视ci中的url引擎，造成了部分页面404问题。
-
-Master vsrsion 0.11.4
-修复了改密码无效的bug。
-临时赋予了普通管理员邀请码管理权限。
+Master vsrsion 0.11.6
+暂时去掉了登陆界面中未完成的功能。
+修复了部分遗留问题而造成的页面外观布局崩坏。
 
 Master vsrsion 0.11.5
 修复了一些bug。
 修复了admin登陆界面因为载入了不需要的css造成的界面显示与预计不符的问题。
 修改了部分sql查询为使用原生sql，使用和修改起来更直观。
 
-Master vsrsion 0.11.6
-暂时去掉了登陆界面中未完成的功能。
-修复了部分遗留问题而造成的页面外观布局崩坏。
+Master vsrsion 0.11.4
+修复了改密码无效的bug。
+临时赋予了普通管理员邀请码管理权限。
+
+Master vsrsion 0.11.3
+删除了部分导航连接中的.php后缀，以避开在nginx下，.php后缀连接会无视ci中的url引擎，造成了部分页面404问题。
+
+Master vsrsion 0.11.2
+修复了标题和logo因路径不正确而产生的404 bug。
+更改了标题。
+
+Master vsrsion 0.11.1
+修正了一些加载静态资源时的路径，原先依据$config['base_url']即网站域名，变为了依据网站根目录。
+开启了novel和search模块的未完成提示。
+
+Master vsrsion 0.11
+新增了key的不同状态查询。
+新增了版本信息。
+

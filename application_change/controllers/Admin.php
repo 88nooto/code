@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         $this->load->helper('url_helper');
 		$this->load->library('encryption');
 		$this->load->library('session');
+		$this->load->helper('string');//兼容php5.6使用ci中的随机函数，加载所需函数库
     }
 	
 	public function index() 
@@ -565,8 +566,9 @@ class Admin extends CI_Controller
 
 	private function password_hash($pw)
 	{
-		$num = random_int(16,24);
-		$bytes = bin2hex(random_bytes($num));
+		$num = rand(16,24); //使用rand替代random_int
+		//$bytes = bin2hex(random_bytes($num));  //random_bytes为php7新函数，兼容php5.6使用ci内置随即函数替代
+		$bytes = bin2hex(random_string('alnum',$num));
 		$pw = $pw.$bytes;
 		$options = [
 		    		'cost' => 11,
@@ -734,11 +736,12 @@ class Admin extends CI_Controller
 	{
 		//$num = random_int(16,24);
 		$num = "12";
-		$bytes = bin2hex(random_bytes($num));
+		//$bytes = bin2hex(random_bytes($num));//random_bytes是php7.0新函数，兼容php5.6使用ci内置随即函数替代
+		$bytes = bin2hex(random_string('alnum',$num));
 		$result = $this->admin_models->get_keycode_check($bytes);
 		if(empty($result))
 		{
-			$this->admin_models->inset_keycode($bytes);
+			$return = $this->admin_models->inset_keycode($bytes);
 			echo $bytes;
 		}else{
 			$this->add_keycode();
